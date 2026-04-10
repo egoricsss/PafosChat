@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
 
     <data>
@@ -14,127 +16,121 @@
     </data>
 
     <ScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
 
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/settingChatContainer"
+        android:background="#000000">
 
-        xmlns:tools="http://schemas.android.com/tools">
-
-
-
-        <androidx.appcompat.widget.Toolbar
+        <LinearLayout
+            android:id="@+id/settingChatContainer"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:id="@+id/toolbarMain"
-            android:background="#191970">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+
+            >
 
 
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/back"
-                android:id="@+id/settingBackBtn"
-                android:layout_marginEnd="10dp"/>
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbarMain"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/purple_700">
 
 
+                <ImageView
+                    android:id="@+id/settingBackBtn"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/back" />
 
 
-        </androidx.appcompat.widget.Toolbar>
+            </androidx.appcompat.widget.Toolbar>
 
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_marginTop="30dp"
-            android:id="@+id/settingUpdateImage"
-            android:layout_marginBottom="15dp"
-            android:layout_width="160dp"
-            android:layout_height="160dp"
-            android:src="@drawable/person"
-            android:layout_gravity="center"
-            android:padding="15dp"
-            app:civ_border_width="1dp"
-            app:civ_border_color="#FE2C54"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/settingUpdateImage"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="15dp"
+                android:padding="15dp"
+                android:src="@drawable/person"
+                app:civ_border_color="#00FE2C54"
+                app:civ_border_width="1dp" />
 
 
-
-        <TextView
-            android:id="@+id/titleText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="40dp"
-            android:fontFamily="@font/nunito_bold"
-            android:gravity="start"
-            android:text="Update Your Profile"
-            android:textSize="25sp"
-            android:layout_marginLeft="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:background="@android:color/transparent"
-            app:boxBackgroundColor="@android:color/transparent">
-
-            <EditText
-                android:id="@+id/settingUpdateName"
+            <TextView
+                android:id="@+id/titleText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:text="@={viewModel.name}"
-                android:hint="Name"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="40dp"
                 android:fontFamily="@font/nunito_bold"
-                android:importantForAutofill="no"
-                android:inputType="textCapWords"
-                android:maxLength="25"
-                android:paddingStart="10dp"
-                android:paddingEnd="0dp"
-                tools:background="@android:color/transparent" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:gravity="start"
+                android:text="Update Your Profile"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_margin="10dp"
+                android:background="@android:color/transparent"
+                android:textColorHint="@color/purple_200"
+                app:boxBackgroundColor="@android:color/transparent">
+
+                <EditText
+                    android:id="@+id/settingUpdateName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:fontFamily="@font/nunito_bold"
+                    android:hint="Name"
+                    android:importantForAutofill="no"
+                    android:inputType="textCapWords"
+                    android:maxLength="25"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="0dp"
+                    android:text="@={viewModel.name}"
+                    android:textColor="#FFFFFF"
+                    tools:background="@android:color/transparent" />
+            </com.google.android.material.textfield.TextInputLayout>
 
 
+            <Button
+                android:id="@+id/settingUpdateButton"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/purple_500"
+                android:fontFamily="@font/nunito_bold"
+                android:text="Update"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
 
-        <Button
-            android:id="@+id/settingUpdateButton"
-            android:layout_width="150dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="20dp"
-            android:backgroundTint="#191970"
-            android:text="Update"
-            android:fontFamily="@font/nunito_bold"
-            android:layout_gravity="center"
-            android:textSize="16sp"
-            />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline50"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent=".5" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline50"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent=".5" />
-
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
 
 
-
-
-    </LinearLayout>
-</ScrollView>
+        </LinearLayout>
+    </ScrollView>
 
 </layout>
