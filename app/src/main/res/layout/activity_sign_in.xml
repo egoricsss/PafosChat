@@ -22,18 +22,18 @@
             android:layout_marginBottom="20dp"
             android:src="@drawable/chatapp"/>
 
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Developed by Developer Sam 2023 ©"
-            android:textColor="@color/black"
+            android:layout_marginBottom="20dp"
             android:fontFamily="@font/nunito_bold"
-            android:textSize="16sp"
-            android:layout_marginBottom="20dp"/>
+            android:text="Developed by egoric, nktk, arseniy"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
 
-
-            <TextView
+        <TextView
                 android:id="@+id/titleText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
