@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "209282826652",
-    "project_id": "pafoschat",
-    "storage_bucket": "pafoschat.firebasestorage.app"
+    "project_number": "645941872519",
+    "project_id": "pafoschat-97215",
+    "storage_bucket": "pafoschat-97215.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:209282826652:android:341c8fa1690b81e46bc859",
+        "mobilesdk_app_id": "1:645941872519:android:532d1abbe4dc4d6cfb7522",
         "android_client_info": {
           "package_name": "com.example.chatmessenger"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCZqzivCFuGcdM9uvKLPl3xTua36MIfbNE"
+          "current_key": "AIzaSyD-5ZleDlIp1UlCZcZO0IQCIZlpGeCL_3Y"
         }
       ],
       "services": {
