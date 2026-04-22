@@ -13,6 +13,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.text.Editable
+import android.text.TextWatcher
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
@@ -53,6 +56,8 @@ class HomeFragment : Fragment(), OnItemClickListener, onChatClicked {
     lateinit var recentadapter : RecentChatAdapter
     lateinit var firestore : FirebaseFirestore
     lateinit var binding: FragmentHomeBinding
+    lateinit var etSearchUsers: EditText
+    private var allUsers = listOf<Users>()
 
 
     override fun onCreateView(
@@ -126,6 +131,7 @@ class HomeFragment : Fragment(), OnItemClickListener, onChatClicked {
 
         rvUsers = view.findViewById(R.id.rvUsers)
         rvRecentChats = view.findViewById(R.id.rvRecentChats)
+        etSearchUsers = view.findViewById(R.id.etSearchUsers)
         adapter = UserAdapter()
         recentadapter = RecentChatAdapter()
 
@@ -139,6 +145,7 @@ class HomeFragment : Fragment(), OnItemClickListener, onChatClicked {
 
         viewModel.getUsers().observe(viewLifecycleOwner, Observer {
 
+            allUsers = it
             adapter.setList(it)
             rvUsers.adapter = adapter
 
@@ -175,10 +182,22 @@ class HomeFragment : Fragment(), OnItemClickListener, onChatClicked {
 
         recentadapter.setOnChatClickListener(this)
 
-
-
-
-
+        // Поиск по пользователям
+        etSearchUsers.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+            override fun afterTextChanged(s: Editable?) {
+                val query = s.toString().trim()
+                if (query.isEmpty()) {
+                    adapter.setList(allUsers)
+                } else {
+                    val filteredList = allUsers.filter { user ->
+                        user.username?.contains(query, ignoreCase = true) == true
+                    }
+                    adapter.setList(filteredList)
+                }
+            }
+        })
 
     }
 
