@@ -8,6 +8,7 @@
 
 
     <FrameLayout
+        android:id="@+id/avatarContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true">
@@ -35,7 +36,7 @@
         android:id="@+id/userName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageViewUser"
+        android:layout_below="@+id/avatarContainer"
         android:layout_marginTop="4dp"
         android:ellipsize="end"
         android:fontFamily="@font/nunito_bold"

@@ -13,8 +13,6 @@ venv/
 __pycache__/
 dist/
 build/
-.mypy_cache/
-.pytest_cache/
 target/
 .gradle/
 .vscode/
@@ -28,6 +26,8 @@ Thumbs.db
 .env
 .env.local
 *.env.*
+.mypy_cache/
+.pytest_cache/
 coverage/
 htmlcov/
 .coverage
