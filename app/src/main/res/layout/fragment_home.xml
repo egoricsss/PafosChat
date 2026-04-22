@@ -69,13 +69,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:background="@android:drawable/edit_text"
                     android:hint="Search users..."
+                    android:inputType="text"
+                    android:maxLines="1"
                     android:padding="10dp"
                     android:textColor="#FFFFFF"
                     android:textColorHint="#CCCCCC"
-                    android:inputType="text"
-                    android:maxLines="1" />
+                    android:textColorLink="#00FFFFFF" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvUsers"
