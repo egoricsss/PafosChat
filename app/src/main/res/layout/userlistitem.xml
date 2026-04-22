@@ -34,7 +34,7 @@
         android:layout_marginTop="52dp"
         android:fontFamily="@font/nunito_bold"
         android:text="User name"
-        android:textColor="@color/black"
+        android:textColor="#FFFFFF"
         android:textColorHighlight="#FFFFFF" />
 
 

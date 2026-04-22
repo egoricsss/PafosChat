@@ -98,7 +98,6 @@ class SignUpActivity : AppCompatActivity() {
 
     private fun createAnAccount(name: String, password: String, email: String) {
 
-
         pd.show()
         pd.setMessage("Registering User")
 
@@ -110,7 +109,7 @@ class SignUpActivity : AppCompatActivity() {
             val user = auth.currentUser
 
             val dataHashMap = hashMapOf("userid" to user!!.uid!!, "username" to name, "useremail" to email, "status" to "default",
-            "imageUrl" to "https://www.pngarts.com/files/6/User-Avatar-in-Suit-PNG.png")
+            "imageUrl" to "https://uxwing.com/account-white-icon/")
 
 
 
