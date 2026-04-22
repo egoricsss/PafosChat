@@ -83,7 +83,7 @@ class ChatAppViewModel : ViewModel() {
             val hashMap = hashMapOf<String, Any>(
                 "sender" to sender,
                 "receiver" to receiver,
-                "message" to message.value!!,
+                "message" to message.value!!.trim(),
                 "time" to Utils.getTime()
             )
 
