@@ -21,18 +21,22 @@
         android:id="@+id/statusOnline"
         android:layout_width="10dp"
         android:layout_height="10dp"
-        android:layout_marginLeft="-10dp"
-        android:layout_toRightOf="@id/imageViewUser"
-        android:translationY="43dp" />
+        android:layout_alignBottom="@id/imageViewUser"
+        android:layout_alignEnd="@id/imageViewUser"
+        android:layout_marginEnd="-2dp"
+        android:layout_marginBottom="2dp"
+        android:translationZ="2dp" />
 
     <TextView
         android:id="@+id/userName"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/statusOnline"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="52dp"
+        android:layout_below="@id/imageViewUser"
+        android:layout_marginTop="4dp"
+        android:ellipsize="end"
         android:fontFamily="@font/nunito_bold"
+        android:gravity="center_horizontal"
+        android:maxLines="1"
         android:text="User name"
         android:textColor="#FFFFFF"
         android:textColorHighlight="#FFFFFF" />
