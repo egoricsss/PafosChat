@@ -72,6 +72,14 @@ class ChatAppViewModel : ViewModel() {
 
             val context = MyApplication.instance.applicationContext
 
+            // Проверка на пустое сообщение
+            if (message.value.isNullOrBlank()) {
+                withContext(Dispatchers.Main) {
+                    Toast.makeText(context, "Message cannot be empty", Toast.LENGTH_SHORT).show()
+                }
+                return@launch
+            }
+
             val hashMap = hashMapOf<String, Any>(
                 "sender" to sender,
                 "receiver" to receiver,
